@@ -1,0 +1,9 @@
+query getCollaboratorsNames($name: String!, $owner: String!) {
+  repository(name: $name, owner: $owner) {
+    collaborators {
+      nodes {
+        email
+      }
+    }
+  }
+}

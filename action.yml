@@ -1,10 +1,9 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Print collaborator names'
+description: 'Greet someone and record the time'
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  github-token: # id of input
+    description: 'your secret token'
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'

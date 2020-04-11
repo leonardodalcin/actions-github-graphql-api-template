@@ -1,0 +1,4 @@
+{
+  "name": "Github graphql schema",
+  "includes": ["**/*"]
+}

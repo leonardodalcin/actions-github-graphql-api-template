@@ -6,12 +6,14 @@
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write **/*.ts",
-    "format-check": "prettier --check **/*.ts",
-    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write **/*.{ts,graphql,yml}",
+    "format-check": "prettier --check **/*.{ts,graphql,yml,json,js}",
+    "lint": "eslint src/**/*.ts --fix",
     "pack": "ncc build",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run pack && npm test"
+    "all": "npm run build && npm run format && npm run lint && npm run pack",
+    "codegen": "graphql-codegen -c src/services/github/codegen.yml",
+    "main": "ts-node src/main.ts"
   },
   "repository": {
     "type": "git",
@@ -25,9 +27,17 @@
   "author": "YourNameOrOrganization",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.0"
+    "@actions/core": "^1.2.0",
+    "@actions/exec": "^1.0.3",
+    "@actions/github": "^2.1.1",
+    "@graphql-codegen/typescript": "^1.13.2",
+    "@graphql-codegen/typescript-graphql-request": "^1.13.2",
+    "@graphql-codegen/typescript-operations": "^1.13.2",
+    "graphql": "^15.0.0",
+    "graphql-request": "^1.8.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.13.2",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.7.12",
     "@typescript-eslint/parser": "^2.8.0",
