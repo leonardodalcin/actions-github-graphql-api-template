@@ -6,7 +6,9 @@ class GithubAPIClient {
   sdk: ReturnType<typeof getSdk>
   private constructor() {
     const client = new GraphQLClient('https://api.github.com/graphql')
-    client.setHeader('authorization', core.getInput('github-token'))
+    const githubToken = core.getInput('github-token')
+    if (!githubToken) throw new Error()
+    client.setHeader('authorization', githubToken)
     this.sdk = getSdk(client)
   }
 
