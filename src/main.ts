@@ -11,7 +11,7 @@ async function run(): Promise<void> {
       )
     )
   } catch (e) {
-    throw e
+    core.debug(e)
   }
 }
 
