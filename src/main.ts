@@ -1,5 +1,5 @@
-import GithubAPIClient from './services/github/GithubAPIClient'
 import * as core from '@actions/core'
+import GithubAPIClient from './services/github/GithubAPIClient'
 async function run(): Promise<void> {
   try {
     core.debug(
@@ -11,7 +11,7 @@ async function run(): Promise<void> {
       )
     )
   } catch (e) {
-    core.debug(e)
+    throw e
   }
 }
 
