@@ -6908,25 +6908,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const core = __importStar(__webpack_require__(470));
 const GithubAPIClient_1 = __importDefault(__webpack_require__(537));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        // eslint-disable-next-line no-console
-        console.log(core.getInput('github-token'));
         try {
-            core.debug(JSON.stringify(yield GithubAPIClient_1.default.getCollaboratorsNames({
+            // eslint-disable-next-line no-console
+            console.log(JSON.stringify(yield GithubAPIClient_1.default.getCollaboratorsNames({
                 name: 'api_pt',
                 owner: 'warrenbrasil'
             })));
@@ -15839,7 +15830,6 @@ class GithubAPIClient {
     constructor() {
         const client = new graphql_request_1.GraphQLClient('https://api.github.com/graphql');
         const githubToken = core.getInput('github-token');
-        core.debug(`token example, ${githubToken}`);
         if (!githubToken)
             throw new Error();
         client.setHeader('Authorization', `bearer ${githubToken}`);
