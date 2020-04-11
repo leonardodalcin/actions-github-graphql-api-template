@@ -1,6 +1,6 @@
 import {GraphQLClient} from 'graphql-request'
 import {getSdk} from './sdk' // THIS FILE IS THE GENERATED FILE
-import core from '@actions/core'
+import * as core from '@actions/core'
 class GithubAPIClient {
   private static instance: GithubAPIClient
   sdk: ReturnType<typeof getSdk>
