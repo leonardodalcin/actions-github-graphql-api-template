@@ -9,7 +9,7 @@ class GithubAPIClient {
     const githubToken = core.getInput('github-token')
     core.debug(`token example, ${githubToken}`)
     if (!githubToken) throw new Error()
-    client.setHeader('Authorization', githubToken)
+    client.setHeader('Authorization', `bearer ${githubToken}`)
     this.sdk = getSdk(client)
   }
 

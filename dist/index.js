@@ -15842,7 +15842,7 @@ class GithubAPIClient {
         core.debug(`token example, ${githubToken}`);
         if (!githubToken)
             throw new Error();
-        client.setHeader('Authorization', githubToken);
+        client.setHeader('Authorization', `bearer ${githubToken}`);
         this.sdk = sdk_1.getSdk(client);
     }
     static getInstance() {
