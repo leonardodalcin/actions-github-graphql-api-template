@@ -15836,7 +15836,11 @@ const sdk_1 = __webpack_require__(780); // THIS FILE IS THE GENERATED FILE
 class GithubAPIClient {
     constructor() {
         const client = new graphql_request_1.GraphQLClient('https://api.github.com/graphql');
-        client.setHeader('authorization', core.getInput('myToken'));
+        const githubToken = core.getInput('github-token');
+        core.debug(githubToken);
+        if (!githubToken)
+            throw new Error();
+        client.setHeader('Authorization', githubToken);
         this.sdk = sdk_1.getSdk(client);
     }
     static getInstance() {
