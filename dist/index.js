@@ -6923,6 +6923,8 @@ const core = __importStar(__webpack_require__(470));
 const GithubAPIClient_1 = __importDefault(__webpack_require__(537));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
+        // eslint-disable-next-line no-console
+        console.log(core.getInput('github-token'));
         try {
             core.debug(JSON.stringify(yield GithubAPIClient_1.default.getCollaboratorsNames({
                 name: 'api_pt',
