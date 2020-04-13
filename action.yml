@@ -4,7 +4,6 @@ inputs:
   github-token: # id of input
     description: 'your secret token'
     required: true
-    default: 'some'
 runs:
   using: 'node12'
   main: 'dist/index.js'

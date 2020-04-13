@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
+  "name": "github-graphql-api-template-action",
   "version": "0.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Github graphql api request tempalte action",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -17,26 +17,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/leonardodalcin/actions-github-graphql-api-template.git"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "YourNameOrOrganization",
+  "author": "Leonardo Vogel Dalcin",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.0",
     "@actions/exec": "^1.0.3",
     "@actions/github": "^2.1.1",
-    "@graphql-codegen/typescript": "^1.13.2",
-    "@graphql-codegen/typescript-graphql-request": "^1.13.2",
-    "@graphql-codegen/typescript-operations": "^1.13.2",
     "graphql": "^15.0.0",
     "graphql-request": "^1.8.2"
   },
   "devDependencies": {
+    "@graphql-codegen/typescript": "^1.13.2",
+    "@graphql-codegen/typescript-graphql-request": "^1.13.2",
+    "@graphql-codegen/typescript-operations": "^1.13.2",
     "@graphql-codegen/cli": "^1.13.2",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.7.12",
@@ -51,5 +51,26 @@
     "prettier": "^1.19.1",
     "ts-jest": "^24.2.0",
     "typescript": "^3.6.4"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "bracketSpacing": false,
+    "arrowParens": "avoid"
+  },
+  "jest": {
+    "clearMocks": true,
+    "moduleFileExtensions": ["js", "ts"],
+    "testEnvironment": "node",
+    "testMatch": ["**/*.test.ts"],
+    "testRunner": "jest-circus/runner",
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "verbose": true
   }
 }
