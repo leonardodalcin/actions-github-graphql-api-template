@@ -37,7 +37,7 @@
     "@graphql-codegen/typescript": "^1.13.2",
     "@graphql-codegen/typescript-graphql-request": "^1.13.2",
     "@graphql-codegen/typescript-operations": "^1.13.2",
-    "@graphql-codegen/cli": "^1.13.2",
+    "@graphql-codegen/cli": "^1.21.8",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.7.12",
     "@typescript-eslint/parser": "^2.8.0",
